@@ -31,6 +31,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
 
+
   a {
     margin-right: 8px;
     text-decoration: unset;

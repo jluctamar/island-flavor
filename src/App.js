@@ -26,14 +26,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin-right: 16px;
-  margin-left: 16px;
+
 `
 
 const NavWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-right: 16px;
+  margin-left: 16px;
 `
 
 
