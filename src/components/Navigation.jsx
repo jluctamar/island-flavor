@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   a {
     margin-right: 8px;
     text-decoration: unset;
-    color: black;
+    color: white;
     &.active {
       
       text-decoration: underline;

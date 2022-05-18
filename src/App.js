@@ -1,6 +1,5 @@
 import {BrowserRouter} from "react-router-dom";
-import {APP_NAME} from "./shared/constants"
-import Navigation from "./components/Navigation";
+
 import Pages from "./pages/Pages";
 import styled from 'styled-components';
 
@@ -10,10 +9,7 @@ function App() {
   return (
     <Wrapper >
       <BrowserRouter>
-        <NavWrapper>
-          <h1>{APP_NAME}</h1>
-          <Navigation />
-        </NavWrapper>
+
         <Pages />
       </BrowserRouter>
     </Wrapper>
@@ -29,13 +25,7 @@ const Wrapper = styled.div`
 
 `
 
-const NavWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-right: 16px;
-  margin-left: 16px;
-`
+
 
 
 

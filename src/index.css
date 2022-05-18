@@ -9,18 +9,22 @@ body {
   width: 100%;
   margin: 0;
   overflow: hidden;
+  --main-font: 'Lobster', cursive;
+  --cursive-font :'Parisienne', cursive;
 }
 
 #root {
   height: 100%;
+
 }
 
 
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+    font-family: var(--main-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

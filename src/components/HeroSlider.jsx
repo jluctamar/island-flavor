@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components';
+import {HERO_OVERLAY_MESSAGE} from '../shared/constants'
 
 
 function HeroSlider() {
@@ -14,8 +15,9 @@ function HeroSlider() {
      if(counter > 4) {
        counter = 1 
      } 
-    }, 4000);
+    }, 3000);
   })
+
 
   return (
     <Wrapper className='hero-slider-wrapper'>
@@ -27,18 +29,22 @@ function HeroSlider() {
           <input type="radio" name='radio-btn' id='radio4'></input>
 
           <div className='slide first'>
-            <img src='./assets/dining1.jpg' alt=''></img>
+            <img src='./assets/dinning1.jpg' alt=''  className='dinning'></img>
           </div>
           <div className='slide'>
             <img src='./assets/dish2.jpg' alt=''></img>
           </div>
           <div className='slide'>
-            <img src='./assets/dining2.jpg' alt=''></img>
+            <img src='./assets/dinning2-1.jpg' alt='' className='second-dinning'></img>
           </div>
           <div className='slide'>
             <img src='./assets/hero3.jpg' alt=''></img>
           </div>
         </Slides>
+
+        <TextOverlay className="text-overlay">
+          <div className="text">{HERO_OVERLAY_MESSAGE} </div>
+        </TextOverlay>
 
         <NavigationAuto className="navigation-auto">
           <div className="auto-btn1"></div>
@@ -68,6 +74,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-item: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   
 
 
@@ -109,20 +116,52 @@ const Slides =  styled.div`
   img {
     width: 100%;
     height: 100%;
+
+    &.dinning {
+      filter: blur(2px);
+    }
+    &.second-dinning {
+      filter: blur(1px) brightness(1.2) contrast(1.1);
+    }
   }
 
 `
 
+const TextOverlay = styled.div`
+  position: absolute; 
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 2000px rgb(255 255 255 / 50%);
+  backdrop-filter: blur(4px);
+  height: 150px;
+  width: 350px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  border-radius: 8px;
+  padding: 16px;
+  top: 55%;
+  left: 8vw;
+
+  .text {
+    font-size: 2em;
+    font-weight: bold;
+    color: #e8e8e3;
+    text-align: center;
+    line-height: 48px;
+    text-shadow: black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px;
+  }
+`
+
 const NavigationManual = styled.div`
 position: absolute; 
-width: 100vw;
+width: 100%;
 display: flex;
 justify-content: center;
 margin-top: -150px;
 
 .manual-btn {
   border: 4px solid red;
-  padding 5px;
+  padding 8px;
   border-radius: 10px;
   cursor: pointer;
   transition: 2s
@@ -144,7 +183,7 @@ const NavigationAuto = styled.div`
 
   div {
     border: 4px solid red;
-    padding 5px;
+    padding 8px;
     border-radius: 10px;
     cursor: pointer;
     transition: 2s
