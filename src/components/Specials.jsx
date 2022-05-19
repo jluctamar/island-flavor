@@ -5,6 +5,7 @@ import {specialties} from '../shared/menuData.js';
 import AppitizersImageList from './AppitizersImageList';
 import MeatsImageList from './MeatsImageList';
 import MiscImageList from './MiscImageList';
+import { Slide } from "react-awesome-reveal";
 
 function Specials() {
     let legArr = [];
@@ -40,35 +41,47 @@ function Specials() {
         <div className="first"> 
             <div className="odd">
                 <div className="pics">
-                    <AppitizersImageList />
+                    <Slide direction="right">
+                        <AppitizersImageList />
+                    </Slide>
                 </div>
                 <div className="details">
                     {appArr.map(elem => <span>{elem[1]} ({elem[0]})</span> )}
                 </div> 
             </div>
             <div className="even">
-                <div className="pics">
-                 <LegumesImageList />
-                </div>
-                <div className="details">
-                {legArr.map(elem => <span>{elem[1]} ({elem[0]})</span> )}</div>         
+                    <div className="pics">
+                        <Slide direction='left'>             
+                            <LegumesImageList />
+                        </Slide>  
+                    </div>
+                    <div className="details">
+                        {legArr.map(elem => <span>{elem[1]} ({elem[0]})</span> )}
+                    </div>       
             </div> 
         </div>
         
         <div className="second">
             <div className="odd">
                 <div className="pics">
-                    <MeatsImageList />
+                    <Slide direction='right'>
+                        <MeatsImageList />
+                    </Slide>
                 </div>
                 <div className="details">
-                {meatArr.map(elem => <span>{elem[1]} ({elem[0]})</span> )}</div> 
+                    {meatArr.map(elem => <span>{elem[1]} ({elem[0]})</span> )}
+                </div> 
             </div>
             <div className="even">
                 <div className="pics">
-                    <MiscImageList />
+                    <Slide direction='left'>
+                        <MiscImageList />
+                    </Slide>
+
                 </div>
                 <div className="details">
-                {miscArr.map(elem => <span>{elem[1]} ({elem[0]})</span> )}</div> 
+                    {miscArr.map(elem => <span>{elem[1]} ({elem[0]})</span> )}
+                </div> 
             </div> 
         </div>
 
@@ -120,7 +133,7 @@ const Wrapper = styled.div`
         text-align: center;
         line-height: 40px;
         font-size: 1.3rem;
-        color: black;
+        color: var(--text-color-secondary);
         text-shadow: white 0px 0px 1px, black 0px 0px 1px, white 0px 0px 1px;
         backdrop-filter: blur(3px);
         background: rgba(255,255,255,0.2);

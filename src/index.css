@@ -11,6 +11,10 @@ body {
   overflow: hidden;
   --main-font: 'Lobster', cursive;
   --cursive-font :'Parisienne', cursive;
+
+  --text-color-primary: #e9967a;
+  --text-color-secondary: darkred;
+  --text-accent-gold: darkgoldenrod;
 }
 
 #root {

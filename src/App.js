@@ -9,7 +9,6 @@ function App() {
   return (
     <Wrapper >
       <BrowserRouter>
-
         <Pages />
       </BrowserRouter>
     </Wrapper>

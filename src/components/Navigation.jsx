@@ -31,15 +31,18 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
 
-
   a {
     margin-right: 8px;
     text-decoration: unset;
     color: white;
     &.active {
-      
       text-decoration: underline;
     }
+  }
+
+  h4 {
+    color: var(--text-color-primary);
+    font-size: 1.3rem;
   }
 `
 

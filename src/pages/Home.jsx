@@ -63,6 +63,8 @@ const NavWrapper = styled.div`
   h1 {
     font-family: var(--cursive-font);
     font-weight: bold;
+    font-size: 2.5rem;
+    color: var(--text-color-primary);
   }
 
 `
