@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import HeroSlider from '../components/HeroSlider';
-import {APP_NAME} from '../shared/constants'
+import {APP_NAME, APP_PRENAME} from '../shared/constants'
 import Navigation from '../components/Navigation';
 import Specials from '../components/Specials';
+import Footer from '../components/footer';
+
 
 function Home() {
   
@@ -15,11 +17,12 @@ function Home() {
   return (
     <Wrapper onScroll={handleScroll} className='wrapper-home'>
       <NavWrapper className='nav-wrapper'>
-        <h1>{APP_NAME}</h1>
+          <h1>{APP_NAME}</h1>
         <Navigation />
       </NavWrapper>
       <HeroSlider />
       <Specials />
+      <Footer className='footer' />
 
     </Wrapper>
   )
@@ -36,6 +39,9 @@ const Wrapper = styled.div`
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+
+  Footer {
+  }
 `
 
 const NavWrapper = styled.div`
@@ -51,13 +57,17 @@ const NavWrapper = styled.div`
   position: absolute;
   top: 0px;
   width: 100%;
+  
 
   transition: all .2s ease-in-out;
 
 
   &.top-stick {
     background: black;
-    transition: all .5s ease-in-out;
+    transition: all .4s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+    background: linear-gradient(316deg, hsla(29, 100%, 96%, 1) 8%, hsla(29, 73%, 71%, 1) 32%, hsla(241, 56%, 58%, 1) 53%, hsla(229, 89%, 62%, 1) 67%, hsla(346, 57%, 43%, 1) 86%, hsla(0, 71%, 45%, 1) 100%)
   }
 
   h1 {

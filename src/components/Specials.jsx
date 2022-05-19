@@ -93,7 +93,7 @@ function Specials() {
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    min-height: 200vh;
+    // min-height: 200vh;
     width: 100%;
 
     .section-header{
