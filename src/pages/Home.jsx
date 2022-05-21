@@ -32,7 +32,6 @@ function Home() {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
   background-image: url(../../assets/wood-background.png);
   background-repeat: no-repeat;  
   background-size: cover;
@@ -41,10 +40,6 @@ const Wrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   
-  .footer {
-    position: absolute;
-    bottom: 0px;
-  }
 
 `
 
