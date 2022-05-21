@@ -22,7 +22,7 @@ const Wrapper = styled.div`
     justify-content: space-around;
     align-items: center; 
     width: 100%;
-    min-height: 20vh;
+    height: 100%;
     box-shadow: rgb(9 30 66 / 25%) 0px -5px 10px 0px, rgb(9 30 66 / 8%) -4px -15px 12px 0px;
 
     // gradient Background

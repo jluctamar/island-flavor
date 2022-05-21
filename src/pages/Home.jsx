@@ -32,6 +32,7 @@ function Home() {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
   background-image: url(../../assets/wood-background.png);
   background-repeat: no-repeat;  
   background-size: cover;
@@ -39,6 +40,11 @@ const Wrapper = styled.div`
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  
+  .footer {
+    position: absolute;
+    bottom: 0px;
+  }
 
 `
 
@@ -55,6 +61,7 @@ const NavWrapper = styled.div`
   position: absolute;
   top: 0px;
   width: 100%;
+  height: 12vh;
   
 
   transition: all .2s ease-in-out;
@@ -72,9 +79,17 @@ const NavWrapper = styled.div`
     font-family: var(--cursive-font);
     font-weight: bolder;
     font-size: 2.5rem;
+    margin: 0;
+    align-self: center;
     color: var(--text-color-primary);
     text-shadow: 0px 2px black;
   }
+  @media only screen and (max-width: 768px) and (orientation: landscape) {
+    height: 20vh;
+    .footer {
+      height: fit-content;
+    }
+  } 
 
 `
 export default Home

@@ -186,6 +186,15 @@ const Slides =  styled.div`
     }
   }
 
+  @media only screen and (max-width: 768px) and (orientation: portrait) {
+    img {
+      object-fit: cover;
+    }
+  }
+
+  @media only screen and (max-width: 768px) and (orientation: landscape) {
+
+  } 
 `
 
 const TextOverlay = styled.div`
@@ -212,6 +221,15 @@ const TextOverlay = styled.div`
     letter-spacing: 1px;
     text-shadow: black 0px 2px 1px, black 0px 0px 1px, black 0px 0px 1px;
   }
+
+  @media only screen and (max-width: 768px) and (orientation: portrait) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 768px) and (orientation: landscape) {
+    height: 120px;
+    top: 48%;
+  } 
 `
 
 const NavigationManual = styled.div`

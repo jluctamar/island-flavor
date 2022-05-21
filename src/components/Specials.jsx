@@ -93,10 +93,9 @@ function Specials() {
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    // min-height: 200vh;
     width: 100%;
 
-    .section-header{
+    .section-header {
         text-align: center;
         font-size: 5rem;
         font-weight: bold;
@@ -110,20 +109,27 @@ const Wrapper = styled.div`
         flex-direction: column;
     }
 
+
     .odd, .even {
         display: flex;
-        flex-direction: column;
         flex-basis: 50%;
         margin-left: 20em;
         margin-right: 20em;
     }
+    .odd {
+        flex-direction: row;
+    }
+    .even { 
+        flex-direction: row-reverse;
+    }
+
+
     .pics, .details {
         display: flex;
         flex-basis: 50%;
         padding: 16px;
 
     }
-
     .details {
         display: flex;
         flex-direction: column;
@@ -139,77 +145,35 @@ const Wrapper = styled.div`
         background: rgba(255,255,255,0.2);
         box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px;
         border-radius: 8px;
-
-        .italics{
-
-        }
     }
     .pics{ 
         display: flex;
         align-self: center;
-
-        LegumesImageList, AppitizersImageList, MeatsImageList, MiscImageList {
-
-        }
     }
 
-    .first {
-        // background: gray;
-        .odd {
-            display: flex;
-            flex-direction: row;
-            .pics {                
-                // background: teal;
 
 
-            }
-            .details {
-                // background: lightblue;
 
-            }
-            
+    @media only screen and (max-width: 768px) {
+        .section-header {
+            font-size: 2.5rem;
         }
-        .even { 
-            display: flex;
-            flex-direction: row-reverse;
-            .pics {
-                // background: teal;
-
-            }
-            .details {
-                // background: lightblue;
-
-            }
+        .odd, .even {
+            margin-left: 1em;
+            margin-right: 1em;
         }
-    }
-
-    .second {
-       // background: lightgray;
-       .odd {
-        display: flex;
-        flex-direction: row;
-        .pics {
-            // background: red;
-
+        .odd, .even {
+            flex-direction: column-reverse;
         }
         .details {
-            // background: crimson;
-
+            margin: 1em;
+            font-size: 1em;
         }
-        
-    }
-    .even { 
-        display: flex;
-        flex-direction: row-reverse;
-        .pics {
-            // background: red;
+    }    
+    
+    @media only screen and (max-width: 768px) and (orientation: landscape) {
 
-        }
-        .details {
-            // background: crimson;
-
-        }
-    }
+    } 
 
     
 `
