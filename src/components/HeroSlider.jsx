@@ -1,35 +1,94 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import {HERO_OVERLAY_MESSAGE} from '../shared/constants';
-import { Fade as div } from "react-awesome-reveal";
-
+import { Fade } from "react-awesome-reveal";
 
 function HeroSlider() {
 
+   // capture relevant elements in variables for use
+   let slidesContainer; 
+   let slidesArr = [];
+   let navBtns;
+   let navBtnsArr = []; 
+   let slideWidth;
+   
+  //  const setSlidePosition = (slide, index) => {
+  //    slide.style.left = slideWidth * index + 'px';
+  //  };
+ 
+   // const currentSlide = slidesContainer.querySelector('.current-slide');
+   // const targetSlide = currentSlide.nextElementSibling;
+ 
+   // when manual buttons are clicked they should display the associating slide
+   const moveToSlide = (currentSlide, targetSlide) => {
+    // slides.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+    currentSlide.classList.remove('current-slide');
+    targetSlide.classList.add('current-slide');    
+   }
+ 
+   const updateNavBtns = (current, target) => {
+     current.classList.remove('current-slide');
+     target.classList.add('current-slide');
+   }
+ 
+ 
+
+
+
+
+   const handleClick = (event) => {
+     const targetBtn = event.target.closest('button');
+   
+     if(!targetBtn) return;
+ 
+     const currentSlide = slidesContainer.querySelector('.current-slide');
+     const currentBtn = navBtns.querySelector('.current-slide');
+     const targetIndex = navBtnsArr.findIndex(btn => btn === targetBtn);
+     const targetSlide = slidesArr[targetIndex];
+ 
+
+     moveToSlide(currentSlide, targetSlide);
+     updateNavBtns(currentBtn, targetBtn);
+   };
+
+
   
   useEffect(() => {
+
+    slidesContainer = document.querySelector('.slides');
+    slidesArr = Array.from(slidesContainer.children) ;
+    navBtns = document.querySelector('.navigation-manual') ;
+    navBtnsArr = Array.from(navBtns.children);
+    slideWidth = slidesArr[0].getBoundingClientRect().width;
+    // slidesArr.forEach((elem, i) => setSlidePosition(elem, i));
+
+
+
+
     let counter = 1;
 
     setInterval(() => {
-     document.getElementById('radio' + counter).checked = true;
+      // Simulate button click in sequential order
+      let autoTarget = slidesArr[counter];
+      let autoTargetBtn = navBtnsArr[counter];
+      let autoCurrentSlide = slidesContainer.querySelector('.current-slide');
+      let autoCurrentBtn = navBtns.querySelector('.current-slide');
+      moveToSlide(autoCurrentSlide, autoTarget);
+      updateNavBtns(autoCurrentBtn,autoTargetBtn );
      counter ++
-     if(counter > 4 ){
-       counter = 1 
+     if(counter > slidesArr.length - 1 ){
+       counter = 0 
      } 
     }, 2500);
   })
 
 
   return (
-    <Wrapper className='hero-slider-wrapper'>
+    <Wrapper className='hero-slider-wrapper' >
       <Slider className='slider'>
         <Slides className='slides'>
-          <input type="radio" name='radio-btn' id='radio1'></input>
-          <input type="radio" name='radio-btn' id='radio2'></input>
-          <input type="radio" name='radio-btn' id='radio3'></input>
-          <input type="radio" name='radio-btn' id='radio4'></input>
           
-            <div className='slide first'>
+            <div className='slide current-slide'>
               <img src='./assets/dinning1.jpg' alt=''  className='dinning'></img>
             </div>
             <div className='slide ' >
@@ -48,20 +107,19 @@ function HeroSlider() {
           <div className="text">{HERO_OVERLAY_MESSAGE} </div>
         </TextOverlay>
 
-        <NavigationAuto className="navigation-auto">
+        <NavigationManual className="navigation-manual" onClick={handleClick}>
+          <button className="manual-btn current-slide"></button>
+          <button className="manual-btn"></button>
+          <button className="manual-btn"></button>
+          <button className="manual-btn"></button>
+        </NavigationManual>
+
+        {/* <NavigationAuto className="navigation-auto">
           <div className="auto-btn1"></div>
           <div className="auto-btn2"></div>
           <div className="auto-btn3"></div>
           <div className="auto-btn4"></div>
-        </NavigationAuto>
-
-        <NavigationManual className="navigation-manual">
-          <label htmlFor="radio1" className="manual-btn"></label>
-          <label htmlFor="radio2" className="manual-btn"></label>
-          <label htmlFor="radio3" className="manual-btn"></label>
-          <label htmlFor="radio4" className="manual-btn"></label>
-        </NavigationManual>
-
+        </NavigationAuto> */}
       </Slider>
 
     </Wrapper>
@@ -88,37 +146,31 @@ position: relative;
   border-radius: 10px;  
 `
 const Slides =  styled.div`
-  width: 500%;
+  width: 100%;
   height: 100%;
   display: flex;
+  position: relative;
 
-  input {
-    display: none;
-  }
 
-  #radio1:checked ~ .first {
-    margin-left: 0;
-
-  }
-  #radio2:checked ~ .first {
-    margin-left: -20%;
-
-  }
-  #radio3:checked ~ .first {
-    margin-left: -40%;
-
-  }
-  #radio4:checked ~ .first {
-    margin-left: -60%;
-
-  }
   .slide {
-    width: 20%;
-    transition: margin-left .8s ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition:  400ms opacity ease-in-out;
+    transition-delay: 400ms;
 
-    
-  
+
   }
+
+  .current-slide {
+    transition-delay: 0s;
+    z-index;
+    opacity: 1;
+  }
+
+
+
 
   img {
     width: 100%;
@@ -158,7 +210,7 @@ const TextOverlay = styled.div`
     text-align: center;
     line-height: 48px;
     letter-spacing: 1px;
-    text-shadow: black 0px 0px 1px, black 0px 0px 1px, black 0px 0px 1px;
+    text-shadow: black 0px 2px 1px, black 0px 0px 1px, black 0px 0px 1px;
   }
 `
 
@@ -167,59 +219,48 @@ position: absolute;
 width: 100%;
 display: flex;
 justify-content: center;
-margin-top: -100px;
+bottom: 24px;
 
 .manual-btn {
-  display: none;   // Hiding the buttons for simplicity
-  border: 4px solid red;
-  padding: 5px;
+  background: rgba(0,0,0,.3);
+  padding: 8px;
+  border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: 2s
+  transition: 500ms;
 }
 .manual-btn:not(:last-child) {
   margin-right 40px;
 }
-.manual-btn:hover {
-  background : red;
+.manual-btn.current-slide {
+  background: rgba(0,0,0, .8);
+  transform: scale(1.5);
 }
 `
 
-const NavigationAuto = styled.div`
-  position: absolute;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin-top: -100px;
+// const NavigationAuto = styled.div`
+//   position: absolute;
+//   display: flex;
+//   width: 100%;
+//   justify-content: center;
+//   margin-top: -100px;
 
-  div {
-    display: none;   // Hiding the buttons for simplicity
-    border: 4px solid red;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 2s
-  }
+//   div {
+//     display: none;   // Hiding the buttons for simplicity
+//     border: 4px solid red;
+//     padding: 5px;
+//     border-radius: 10px;
+//     cursor: pointer;
+//     transition: 2s;
+//   }
 
-   div:not(:last-child) {
-    margin-right: 40px;
-  }
-  .manual-btn:hover {
-    background : red;
-  }
+//    div:not(:last-child) {
+//     margin-right: 40px;
+//   }
+//   .manual-btn:hover {
+//     background : red;
+//   }
 
-  #radio1:checked ~ .navigation-auto .auto-btn1 {
-    margin-left: 0
-  }
-  #radio2:checked ~ .navigation-auto .auto-btn2 {
-    margin-left: -20%
-  }
-  #radio3:checked ~ .navigation-auto .auto-btn3 {
-    margin-left: -40%
-  }
-  #radio4:checked ~ .navigation-auto .auto-btn4 {
-    margin-left: -60%
-  }
-`
+// `
  
 export default HeroSlider
