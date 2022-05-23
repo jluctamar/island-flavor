@@ -1,12 +1,9 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Pages from "./pages/Pages";
 import styled from 'styled-components';
 import Navigation from "./components/Navigation";
 import { APP_NAME } from "./shared/constants";
-import { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
 import { Menu } from "@mui/material";
 
 function App() {
@@ -37,9 +34,8 @@ function App() {
         
         <Routes>
             <Route path="/" element={<Home parentCallback = {handleCallback}/>} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/menu" element={<Menu />} />
+            <Route path="/about" element={<About parentCallback = {handleCallback} />} />
         </Routes>
       </BrowserRouter>
     </Wrapper>
@@ -104,6 +100,10 @@ h1 {
   color: var(--text-color-primary);
   text-shadow: 0px 2px black;
 }
+
+// @media only screen and (max-width: 767px) and (orientation: landscape) {
+//   height: 15vh;
+// }
 
 `
 

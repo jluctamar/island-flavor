@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {NavLink} from 'react-router-dom'; 
 import styled from 'styled-components';
 import { Spin as Hamburger } from 'hamburger-react';
@@ -7,8 +7,13 @@ import { BrowserView, MobileView } from 'react-device-detect';
 
 function Navigation(properties) {
   const [showNav, setShowNav]  = useState(false);
+  const [toggled, toggle] = useState();
 
-
+  const handleClick= () => {
+    setShowNav(false);
+    toggle(false);
+  }
+  
   useEffect(() => {
     properties.parentCallback(showNav);
   })
@@ -18,41 +23,37 @@ function Navigation(properties) {
   return (
     <Wrapper>
       <BrowserView className='browser-view'>
+        
         <NavLink to={'/'}>
           <h4>Home</h4>
-        </NavLink>
-        
-        <NavLink to={'/about'}>
-          <h4>About</h4>
         </NavLink>
         
         <NavLink to={'/menu'}>
           <h4>Menu</h4>
         </NavLink>
         
-        <NavLink to={'/contact'}>
-          <h4>Contact</h4>
+        <NavLink to={'/about'}>
+          <h4>About</h4>
         </NavLink>
+        
+        
       </BrowserView>
 
       <MobileView className='mobile-view-wrapper'>
-        <Hamburger color='var(--text-color-primary)' onToggle={setShowNav} />
+        <Hamburger color='var(--text-color-primary)' onToggle={setShowNav}  toggle={toggle} toggled={toggled}  />
           { showNav &&  <div className="mobile-nav">
-          <NavLink to={'/'}>
+          <NavLink to={'/'} onClick={handleClick}>
             <h4>Home</h4>
           </NavLink>
           
-          <NavLink to={'/about'}>
-            <h4>About</h4>
-          </NavLink>
-          
-          <NavLink to={'/menu'}>
+          <NavLink to={'/menu'} onClick={handleClick}>
             <h4>Menu</h4>
           </NavLink>
           
-          <NavLink to={'/contact'}>
-            <h4>Contact</h4>
+          <NavLink to={'/about'} onClick={handleClick}>
+            <h4>About</h4>
           </NavLink>
+          
         </div> }
       </MobileView>
 

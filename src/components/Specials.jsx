@@ -46,7 +46,7 @@ function Specials() {
                     </Slide>
                 </div>
                 <div className="details">
-                    {appArr.map(elem => <span>{elem[1]} ({elem[0]})</span> )}
+                    {appArr.map((elem, index) => <span key={index}>{elem[1]} ({elem[0]})</span> )}
                 </div> 
             </div>
             <div className="even">
@@ -56,7 +56,7 @@ function Specials() {
                         </Slide>  
                     </div>
                     <div className="details">
-                        {legArr.map(elem => <span>{elem[1]} ({elem[0]})</span> )}
+                        {legArr.map((elem, index) => <span key={index}>{elem[1]} ({elem[0]})</span> )}
                     </div>       
             </div> 
         </div>
@@ -69,7 +69,7 @@ function Specials() {
                     </Slide>
                 </div>
                 <div className="details">
-                    {meatArr.map(elem => <span>{elem[1]} ({elem[0]})</span> )}
+                    {meatArr.map((elem, index )=> <span key={index}>{elem[1]} ({elem[0]})</span> )}
                 </div> 
             </div>
             <div className="even">
@@ -80,7 +80,7 @@ function Specials() {
 
                 </div>
                 <div className="details">
-                    {miscArr.map(elem => <span>{elem[1]} ({elem[0]})</span> )}
+                    {miscArr.map((elem, index) => <span key={index}>{elem[1]} ({elem[0]})</span> )}
                 </div> 
             </div> 
         </div>
