@@ -154,15 +154,13 @@ const Wrapper = styled.div`
 
 
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 767px) {
         .section-header {
             font-size: 2.5rem;
         }
         .odd, .even {
             margin-left: 1em;
             margin-right: 1em;
-        }
-        .odd, .even {
             flex-direction: column-reverse;
         }
         .details {
@@ -171,8 +169,27 @@ const Wrapper = styled.div`
         }
     }    
     
-    @media only screen and (max-width: 768px) and (orientation: landscape) {
+    @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+        .odd, .even {
+            flex-direction: column-reverse;
+            margin-left: 10em;
+            margin-right: 10em;
+        }
+    } 
 
+    @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+        .odd, .even {
+            margin-left: 5em;
+            margin-right: 5em;
+        }
+    } 
+
+
+    @media only screen and (min-width: 1025px) and (max-width: 1200px) and (orientation: landscape) {
+        .odd, .even {
+            margin-left: 10em;
+            margin-right: 10em;
+        }
     } 
 
     
