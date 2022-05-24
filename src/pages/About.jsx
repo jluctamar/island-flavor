@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Footer from '../components/footer';
-import { CUSTOMER_SERVICE_AIM } from '../shared/constants';
+import { COPYRIGHT, CUSTOMER_SERVICE_AIM } from '../shared/constants';
 
 function About( properties) {
   const simulateScrollHeight = -1;
@@ -83,7 +83,8 @@ function About( properties) {
             <textarea id="message" required />
           </div>
           <button type="submit">SUBMIT</button>
-        </form>        
+        </form> 
+        <div className="copyright"> {COPYRIGHT}</div>       
       </div>
       {/* <Footer className='footer' /> */}
     </Wrapper>
@@ -162,7 +163,7 @@ const Wrapper = styled.div`
       display: flex; 
       flex-direction: row;
       justify-content: space-between;
-      width: 50%;
+      width: 70%;
       
       .address, .num, .hours {
         display:flex;
@@ -183,7 +184,7 @@ const Wrapper = styled.div`
 
     .more-info {
       align-self: center;
-      margin-top: 1em;
+      margin-top: 2em;
       font-size: 1.2rem;
     }
 
@@ -191,7 +192,7 @@ const Wrapper = styled.div`
   }
   .contact-form {
     display: flex;
-    height: 75vh;
+    height: 95vh;
     width: 100%;
     background: #0a1524;
     color: white;
@@ -252,6 +253,184 @@ const Wrapper = styled.div`
       white-space: nowrap;
     }
   }
+
+
+  .copyright {
+    color: white;
+    letter-spacing: 1px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
+  @media only screen and (max-width: 767px) and (orientation: portrait) {
+    .customer-service {
+      padding: 1.2em;
+      .header {
+        font-size: 2rem;
+      }
+      .text{
+        font-size: 1.2rem;
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+    }
+
+    .info {
+      padding: 1em;
+      height: 85vh;
+      .header {
+        font-size: 2rem;
+      }
+      .contact-info {
+        flex-direction: column;
+        margin-bottom: 16px;
+        width: 80%;
+        align-items: self-start;
+
+        .address, .num, .hours {
+          margin-bottom: 24px;
+        }
+        
+      }
+
+
+      .more-info {
+        font-size: .8rem;
+        margin-bottom: 8px;
+      }
+    }
+
+    .contact-form {
+      height: 90vh;
+      padding-top: 2em;
+      .header {
+        font-size: 2rem;
+      }
+
+      form {
+        width:80%;
+      }
+    }
+
+  }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    .customer-service {
+      padding: 1.2em;
+      .header {
+        font-size: 2rem;
+      }
+      .text{
+        font-size: 1.2rem;
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+    }
+  
+  
+
+  
+  .info {
+    padding: 1em;
+    height: 130vh;
+    .header {
+      font-size: 2rem;
+    }
+    .contact-info {
+      flex-direction: column;
+      margin-bottom: 16px;
+      width: 80%;
+      align-items: self-start;
+
+      .address, .num, .hours {
+        margin-bottom: 24px;
+      }
+      
+    }
+
+
+    .more-info {
+      font-size: .8rem;
+      margin-bottom: 8px;
+    }
+  }
+
+  .contact-form {
+    height: 165vh;
+    padding-top: 2em;
+    .header {
+      font-size: 2rem;
+    }
+
+    form {
+      width:80%;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .customer-service {
+    .text{
+      padding-left: 5em;
+      padding-right: 5em;
+    }
+  }
+  .info {
+    padding-left: 1em; 
+    padding-right: 1em;
+    .contact-info {
+      width: 80%;
+    }
+  }
+
+  .contact-form {
+    form {
+      width: 80%;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .customer-service {
+    .text{
+      padding-left: 5em;
+      padding-right: 5em;
+    }
+  }
+  .info {
+    padding-left: 1em; 
+    padding-right: 1em;
+    height: 80vh;
+    .contact-info {
+      width: 80%;
+    }
+  }
+
+  .contact-form {
+    height: 165vh;
+    form {
+      width: 80%;
+    }
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1200px) and (orientation: landscape) {
+
+  .info {
+    padding-left: 1em; 
+    padding-right: 1em;
+    height: 80vh;
+    .contact-info {
+      width: 80%;
+    }
+  }
+
+  .contact-form {
+    height: 165vh;
+    form {
+      width: 80%;
+    }
+  }
+}
 `
 
 export default About

@@ -39,6 +39,7 @@ const Wrapper = styled.div`
     .copyright {
         color: white;
         letter-spacing: 1px;
+        margin-top: 16px;
         margin-bottom: 16px;
         font-size: 1rem;
     }

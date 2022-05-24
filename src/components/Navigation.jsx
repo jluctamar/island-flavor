@@ -117,6 +117,29 @@ const Wrapper = styled.div`
     }
   }
 
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    .mobile-view-wrapper {
+      .hamburger-react {
+        top: 0px;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .mobile-view-wrapper {
+      .hamburger-react {
+        top: 32px;
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .mobile-view-wrapper {
+      .hamburger-react {
+        top: 0px;
+      }
+    }
+  }
+
 `
 
 
