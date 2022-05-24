@@ -53,7 +53,6 @@ function Navigation(properties) {
           <NavLink to={'/about'} onClick={handleClick}>
             <h4>About</h4>
           </NavLink>
-          
         </div> }
       </MobileView>
 

@@ -5,19 +5,22 @@ import { APP_NAME } from "./shared/constants";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import { Menu } from "@mui/material";
+import { useEffect } from "react";
 
 function App() {
 
   const handleCallback = (childScrollData) =>{
     let navbar = document.querySelector(".nav-wrapper");
-    navbar.classList.toggle("top-stick", childScrollData > navbar.offsetHeight );
-    
+    // for elements that dont need the scroll effect expect -1 value for childScrollData
+   
+    navbar.classList.toggle("standard-placement", childScrollData == -1 ); 
+    navbar.classList.toggle("top-stick", childScrollData > navbar.offsetHeight
+     ); 
   }
 
   const handleHamburgerCallback = (showMobileNav) =>{
     let navbar = document.querySelector(".nav-wrapper");
     navbar.classList.toggle("fullscreen", showMobileNav );
-   
   }
 
 
@@ -70,12 +73,18 @@ transition: all .2s ease-in-out;
 
 
 &.top-stick {
-  background: black;
   transition: all .2s ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
-  background: linear-gradient(145deg, hsla(29, 100%, 96%, 1) 8%, hsla(29, 73%, 71%, 1) 32%, hsla(241, 56%, 58%, 1) 53%, hsla(229, 89%, 62%, 1) 67%, hsla(346, 57%, 43%, 1) 86%, hsla(0, 71%, 45%, 1) 100%)
+  background: linear-gradient(145deg,hsla(29,100%,96%,1) 8%,hsla(29,73%,71%,1) 32%,hsla(206, 82%, 59%, 1) 53%,hsla(229,89%,62%,1) 67%,hsla(346,57%,43%,1) 86%,hsla(0,71%,45%,1) 100%);
+ // background: linear-gradient(145deg, hsla(29, 100%, 96%, 1) 8%, hsla(29, 73%, 71%, 1) 32%, hsla(241, 56%, 58%, 1) 53%, hsla(229, 89%, 62%, 1) 67%, hsla(346, 57%, 43%, 1) 86%, hsla(0, 71%, 45%, 1) 100%);
 }
+
+&.standard-placement {
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  background: linear-gradient(145deg,hsla(29,100%,96%,1) 8%,hsla(29,73%,71%,1) 32%,hsla(206, 82%, 59%, 1) 53%,hsla(229,89%,62%,1) 67%,hsla(346,57%,43%,1) 86%,hsla(0,71%,45%,1) 100%);
+}
+
 
 &.fullscreen {
   flex-direction: column;
