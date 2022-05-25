@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import HeroSlider from '../components/HeroSlider';
 import Specials from '../components/Specials';
@@ -10,6 +10,11 @@ function Home(properties) {
       properties.parentCallback(event.target.scrollTop);
       event.preventDefault();
   };
+
+  useEffect(() => {
+    let initialScrollValue = 0;
+    properties.parentCallback(initialScrollValue );
+  }, [properties])
   
   return (
     <Wrapper onScroll={handleScroll} className='wrapper-home'>

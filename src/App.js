@@ -5,26 +5,23 @@ import { APP_NAME } from "./shared/constants";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Menu from "./pages/Menu";
-import { useEffect } from "react";
 
 function App() {
+
 
   const handleCallback = (childScrollData) =>{
     let navbar = document.querySelector(".nav-wrapper");
     // for elements that dont need the scroll effect expect -1 value for childScrollData
    
-    navbar.classList.toggle("standard-placement", childScrollData == -1 ); 
+    navbar.classList.toggle("standard-placement", childScrollData === -1 ); 
     navbar.classList.toggle("top-stick", childScrollData > navbar.offsetHeight
-     ); 
+    );
   }
 
   const handleHamburgerCallback = (showMobileNav) =>{
     let navbar = document.querySelector(".nav-wrapper");
     navbar.classList.toggle("fullscreen", showMobileNav );
   }
-
-
-  
 
 
   return (

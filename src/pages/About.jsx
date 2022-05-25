@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import Footer from '../components/footer';
-import { COPYRIGHT, CUSTOMER_SERVICE_AIM } from '../shared/constants';
+import { ADDRESS_FIRST_LINE, ADDRESS_SECOND_LINE, COPYRIGHT, CUSTOMER_SERVICE_AIM } from '../shared/constants';
 
 function About( properties) {
   const simulateScrollHeight = -1;
@@ -48,13 +47,13 @@ function About( properties) {
           <div className="address">
             <div className="title">Address</div>
             <div className="content">
-              <div>500 Route 303, Suite A3</div>
-              <div>Orangeburg, NY 10962</div>
+              <div>{ADDRESS_FIRST_LINE}</div>
+              <div>{ADDRESS_SECOND_LINE}</div>
             </div>
           </div>
           <div className="num">
             <div className="title">Contact</div>
-            <div className="content">845-848-2782</div>
+            <div className="content">555-555-5555</div>
           </div>
           <div className="hours">
             <div className="title">Hours</div>

@@ -10,7 +10,15 @@ function Menu(properties) {
   let meatLegumArr = [];
   let saladsArr = [];
   let appArr = [];
-  
+  let burgersArr = [];
+  let tacosArr = [];
+  let seafoodArr = [];
+  let soupArr = [];
+  let sideDishesArr = [];
+  let beveragesArr = [];
+  let dessertsArr = [];
+  let extrasArr = [];
+
   Object.entries(fullMenu.appitizers).forEach((entry) => {
     appArr.push(entry);
   });
@@ -20,10 +28,31 @@ function Menu(properties) {
   Object.entries(fullMenu.meatsAndLegumes).forEach((entry) => {
     meatLegumArr.push(entry);
   });
+  Object.entries(fullMenu.burgers).forEach((entry) => {
+    burgersArr.push(entry);
+  });
+  Object.entries(fullMenu.tacos).forEach((entry) => {
+    tacosArr.push(entry);
+  });
+  Object.entries(fullMenu.seafood).forEach((entry) => {
+    seafoodArr.push(entry);
+  });
+  Object.entries(fullMenu.soups).forEach((entry) => {
+    soupArr.push(entry);
+  });
+  Object.entries(fullMenu.sideDishes).forEach((entry) => {
+    sideDishesArr.push(entry);
+  });
+  Object.entries(fullMenu.beverages).forEach((entry) => {
+    beveragesArr.push(entry);
+  });
+  Object.entries(fullMenu.desserts).forEach((entry) => {
+    dessertsArr.push(entry);
+  });
+  Object.entries(fullMenu.extras).forEach((entry) => {
+    extrasArr.push(entry);
+  });
 
-  const handleOrderClick = () => {
-
-  }
 
 
   useEffect(() => {
@@ -34,33 +63,89 @@ function Menu(properties) {
       
       <div className="meal-sections">
         <form action={PLACE_ORDER_LINK}>
-          <button type="submit" onClick={handleOrderClick}>Order Now</button>
+          <button type="submit">Order Now</button>
         </form>
         <div className='meal-types'>
           <div className="header">Appetizers</div>
           <div className='items'>  
-            {appArr.map((elem, index) => <MenuItem key={index} creole={elem[1].creole} english={elem[1].english} price={elem[1].price}/>)}
+            {appArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
           </div>
         </div>
         
         <div className='meal-types'>
           <div className="header">Salads</div>
           <div className="items">
-            {saladsArr.map((elem, index) => <MenuItem key={index} creole={elem[1].creole} english={elem[1].english} price={elem[1].price}/>)}
+            {saladsArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
           </div>
         </div>
         
         <div className='meal-types'>
           <div className="header">Meats And Legumes</div>
           <div className="items">
-            {meatLegumArr.map((elem, index) => <MenuItem key={index} creole={elem[1].creole} english={elem[1].english} price={elem[1].price}/>)}
+            {meatLegumArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+          </div>
+        </div>
+
+        <div className='meal-types'>
+          <div className="header">Burgers</div>
+          <div className="items">
+            {burgersArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+          </div>
+        </div>
+
+        <div className='meal-types'>
+          <div className="header">Tacos</div>
+          <div className="items">
+            {tacosArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+          </div>
+        </div>
+
+        <div className='meal-types'>
+          <div className="header">Seafood</div>
+          <div className="items">
+            {seafoodArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+          </div>
+        </div>
+
+        <div className='meal-types'>
+          <div className="header">Soup</div>
+          <div className="items">
+            {soupArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+          </div>
+        </div>
+
+        <div className='meal-types'>
+          <div className="header">Side Dishes</div>
+          <div className="items">
+            {sideDishesArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+          </div>
+        </div>
+
+        <div className='meal-types'>
+          <div className="header">Beverages</div>
+          <div className="items">
+            {beveragesArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+          </div>
+        </div>
+
+        <div className='meal-types'>
+          <div className="header">Desserts</div>
+          <div className="items">
+            {dessertsArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+          </div>
+        </div>
+
+        <div className='meal-types'>
+          <div className="header">Extras</div>
+          <div className="items">
+            {extrasArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
           </div>
         </div>
 
         <div className="order-action">
           <div className='text'>Order Pickup or Delivery With Uber Eats</div> 
           <form action={PLACE_ORDER_LINK}>
-              <button type="submit" onClick={handleOrderClick}>Order Now</button>
+              <button type="submit">Order Now</button>
             </form>
         </div>
       </div>

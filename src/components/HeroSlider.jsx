@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import {HERO_OVERLAY_MESSAGE} from '../shared/constants';
-import { Fade } from "react-awesome-reveal";
 
 function HeroSlider() {
 
@@ -10,14 +9,6 @@ function HeroSlider() {
    let slidesArr = [];
    let navBtns;
    let navBtnsArr = []; 
-   let slideWidth;
-   
-  //  const setSlidePosition = (slide, index) => {
-  //    slide.style.left = slideWidth * index + 'px';
-  //  };
- 
-   // const currentSlide = slidesContainer.querySelector('.current-slide');
-   // const targetSlide = currentSlide.nextElementSibling;
  
    // when manual buttons are clicked they should display the associating slide
    const moveToSlide = (currentSlide, targetSlide) => {
@@ -59,7 +50,7 @@ function HeroSlider() {
     slidesArr = Array.from(slidesContainer.children) ;
     navBtns = document.querySelector('.navigation-manual') ;
     navBtnsArr = Array.from(navBtns.children);
-    slideWidth = slidesArr[0].getBoundingClientRect().width;
+    // slideWidth = slidesArr[0].getBoundingClientRect().width;
     // slidesArr.forEach((elem, i) => setSlidePosition(elem, i));
 
 

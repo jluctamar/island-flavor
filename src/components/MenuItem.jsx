@@ -5,8 +5,8 @@ function MenuItem(properties) {
   return (
     <Wrapper className="wrapper-menu-item">
         <div className="names">
-            <div className="text">{properties.creole}</div>
-            <div className="text sub">{properties.english}</div>
+            <div className="text">{properties.mainText}</div>
+            <div className="text sub">{properties.subText}</div>
         </div>
         <div className="price">
         {new Intl.NumberFormat("en-US", {

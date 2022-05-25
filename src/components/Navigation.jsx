@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {NavLink} from 'react-router-dom'; 
 import styled from 'styled-components';
 import { Spin as Hamburger } from 'hamburger-react';
