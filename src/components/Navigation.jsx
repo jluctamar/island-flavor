@@ -78,7 +78,7 @@ const Wrapper = styled.div`
 
   h4 {
     color: var(--text-color-primary);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-shadow: 0px 2px black;
   }
 

@@ -4,7 +4,7 @@ import Navigation from "./components/Navigation";
 import { APP_NAME } from "./shared/constants";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import { Menu } from "@mui/material";
+import Menu from "./pages/Menu";
 import { useEffect } from "react";
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
         
         <Routes>
             <Route path="/" element={<Home parentCallback = {handleCallback}/>} />
-            <Route path="/menu" element={<Menu />} />
+            <Route path="/menu" element={<Menu parentCallback = {handleCallback}  />} />
             <Route path="/about" element={<About parentCallback = {handleCallback} />} />
         </Routes>
       </BrowserRouter>
