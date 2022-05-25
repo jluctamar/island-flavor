@@ -36,12 +36,39 @@ const Wrapper = styledComponents.div`
 
 
   .text, .price {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: #040403;
+    text-shadow: 0px 2px #8f8f8f;
     
     &.sub {
         font-size: 1rem;
         opacity: .7;
     }
+  }
+
+  @media only screen and (max-width: 767px) and (orientation: portrait) { 
+    flex-direction: column;
+    height: 120px;
+    width: 150px;
+
+    .text, .price {
+        font-size: 1rem;
+        text-align: center;
+      }
+  }
+  @media only screen and (max-width: 767px) and (orientation: landscape) { 
+    flex-direction: column;
+    height: 120px;
+    width: 190px;
+
+    .text, .price {
+        font-size: 1rem;
+        text-align: center;
+      }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) { 
+      width: 300px;
   }
 
 
