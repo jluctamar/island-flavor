@@ -1,7 +1,7 @@
 {
   "name": "island-flavor",
   "version": "0.1.0",
-  "homepage": "https://gitname.github.io/island-flavor/",
+  "homepage": "https://jluctamar.github.io/island-flavor/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
