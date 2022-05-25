@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/island-flavor/static/css/main.f6c43587.css",
+    "main.js": "/island-flavor/static/js/main.34df37b5.js",
+    "index.html": "/island-flavor/index.html",
+    "main.f6c43587.css.map": "/island-flavor/static/css/main.f6c43587.css.map",
+    "main.34df37b5.js.map": "/island-flavor/static/js/main.34df37b5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f6c43587.css",
+    "static/js/main.34df37b5.js"
+  ]
+}
