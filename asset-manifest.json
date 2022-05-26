@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/island-flavor/static/css/main.f6c43587.css",
-    "main.js": "/island-flavor/static/js/main.a3ede158.js",
+    "main.js": "/island-flavor/static/js/main.c7b741ed.js",
     "index.html": "/island-flavor/index.html",
     "main.f6c43587.css.map": "/island-flavor/static/css/main.f6c43587.css.map",
-    "main.a3ede158.js.map": "/island-flavor/static/js/main.a3ede158.js.map"
+    "main.c7b741ed.js.map": "/island-flavor/static/js/main.c7b741ed.js.map"
   },
   "entrypoints": [
     "static/css/main.f6c43587.css",
-    "static/js/main.a3ede158.js"
+    "static/js/main.c7b741ed.js"
   ]
 }
