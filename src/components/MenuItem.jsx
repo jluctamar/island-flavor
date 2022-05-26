@@ -54,6 +54,12 @@ const Wrapper = styledComponents.div`
     .text, .price {
         font-size: 1rem;
         text-align: center;
+
+        &.sub {
+          font-size: .7rem;
+          opacity: .6;
+          margin-top: 4px;
+        }
       }
   }
   @media only screen and (max-width: 767px) and (orientation: landscape) { 
@@ -64,6 +70,12 @@ const Wrapper = styledComponents.div`
     .text, .price {
         font-size: 1rem;
         text-align: center;
+
+        &.sub {
+          font-size: .7rem;
+          opacity: .6;
+          margin-top: 4px;
+        }
       }
   }
 
