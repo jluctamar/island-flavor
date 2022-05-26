@@ -104,7 +104,7 @@ h1 {
   margin: 0;
   align-self: center;
   color: var(--text-color-primary);
-  text-shadow: blue 1px 2px 2px;
+  text-shadow: black 1px 2px 2px;
 
 `
 

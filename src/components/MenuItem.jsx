@@ -48,9 +48,9 @@ const Wrapper = styledComponents.div`
 
   @media only screen and (max-width: 767px) and (orientation: portrait) { 
     flex-direction: column;
-    height: 115px;
-    width: 135px;
-    
+    height: 160px;
+    width: 120px;
+
     .text, .price {
         font-size: 1rem;
         text-align: center;
