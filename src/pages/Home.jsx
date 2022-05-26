@@ -30,7 +30,7 @@ function Home(properties) {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-image: url(${process.env.PUBLIC_URL + '../../assets/wood-background.png'});
+  background-image: url(${process.env.PUBLIC_URL + '/assets/wood-background.png'});
   background-repeat: no-repeat;  
   background-size: cover;
   height: 100%;
