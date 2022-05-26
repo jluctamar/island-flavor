@@ -83,7 +83,9 @@ transition: all .2s ease-in-out;
 
 
 &.fullscreen {
-  position: absolute !important;
+  top: 0px;
+  right: 0px;
+  position: fixed !important;
   flex-direction: column;
   background: black;
   background-image: linear-gradient(1deg,#000000 0%,#434343 74%);
@@ -104,7 +106,7 @@ h1 {
   margin: 0;
   align-self: center;
   color: var(--text-color-primary);
-  text-shadow: black 1px 2px 2px;
+  text-shadow: blue 1px 2px 2px;
 
 `
 

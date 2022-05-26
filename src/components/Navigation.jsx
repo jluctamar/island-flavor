@@ -106,7 +106,7 @@ const Wrapper = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-      height: 100vh;
+      height: 100%;
       width: 100%;
 
       h4 {
