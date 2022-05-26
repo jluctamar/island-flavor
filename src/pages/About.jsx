@@ -107,7 +107,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    // height: 75vh;
     width: 100%;
     background: white;
     padding: 8em;
@@ -115,6 +115,7 @@ const Wrapper = styled.div`
     .header {
       margin-bottom: 48px;
       font-size: 3rem;
+      text-align: center;
     }
     .text {
       font-size: 1.5rem;
@@ -127,7 +128,7 @@ const Wrapper = styled.div`
   }
   .customer-testimonials {
     display: flex;
-    height: 50vh;
+    // height: 50vh;
     width: 100%;
     flex-direction: column;
     justify-content: center;
@@ -145,7 +146,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    // height: 50vh;
     width: 100%;
     background: white;
     padding-left: 8em;
@@ -191,7 +192,7 @@ const Wrapper = styled.div`
   }
   .contact-form {
     display: flex;
-    height: 95vh;
+    // height: 95vh;
     width: 100%;
     background: #0a1524;
     color: white;
@@ -277,7 +278,7 @@ const Wrapper = styled.div`
 
     .info {
       padding: 1em;
-      height: 85vh;
+      // height: 85vh;
       .header {
         font-size: 2rem;
       }
@@ -301,7 +302,7 @@ const Wrapper = styled.div`
     }
 
     .contact-form {
-      height: 90vh;
+      // height: 90vh;
       padding-top: 2em;
       .header {
         font-size: 2rem;
@@ -331,7 +332,7 @@ const Wrapper = styled.div`
   
   .info {
     padding: 1em;
-    height: 130vh;
+    // height: 130vh;
     .header {
       font-size: 2rem;
     }
@@ -355,7 +356,7 @@ const Wrapper = styled.div`
   }
 
   .contact-form {
-    height: 165vh;
+    // height: 165vh;
     padding-top: 2em;
     .header {
       font-size: 2rem;
@@ -399,14 +400,14 @@ const Wrapper = styled.div`
   .info {
     padding-left: 1em; 
     padding-right: 1em;
-    height: 80vh;
+    // height: 80vh;
     .contact-info {
       width: 80%;
     }
   }
 
   .contact-form {
-    height: 165vh;
+    // height: 165vh;
     form {
       width: 80%;
     }
@@ -417,14 +418,14 @@ const Wrapper = styled.div`
   .info {
     padding-left: 1em; 
     padding-right: 1em;
-    height: 80vh;
+    // height: 80vh;
     .contact-info {
       width: 80%;
     }
   }
 
   .contact-form {
-    height: 165vh;
+    // height: 165vh;
     form {
       width: 80%;
     }
