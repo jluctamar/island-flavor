@@ -29,6 +29,11 @@ function MiscImageList() {
 const Box = styled.div`
     width: 100%;
     height: 100%;
+    
+    img {
+      border-radius: 16px;
+      box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px, rgb(0 0 0 / 30%) 0px 3px 7px -3px;
+    }
 `
 
 
@@ -47,8 +52,8 @@ const itemData = [
         title: 'Burger',
       },
       {
-        img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-        title: 'Coffee',
+        img: 'https://i0.wp.com/recipesofholly.com/wp-content/uploads/2020/04/The-Best-Carrot-Cake-Recipe-2.jpg?fit=1200%2C800&ssl=1',
+        title: 'Carrot Cake',
       },
 
 

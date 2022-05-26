@@ -29,26 +29,31 @@ function MeatsImageList() {
 const Box = styled.div`
     width: 100%;
     height: 100%;
+    
+    img {
+      border-radius: 16px;
+      box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px, rgb(0 0 0 / 30%) 0px 3px 7px -3px;
+    }
 `
 
 
 
 const itemData = [
     {
-        img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-        title: 'Breakfast',
+        img: 'https://i.ytimg.com/vi/fv5N_W0yQW4/maxresdefault.jpg',
+        title: 'Oxtail',
       },
       {
-        img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-        title: 'Burger',
+        img: 'https://i.ytimg.com/vi/GjpnsqYOv_g/maxresdefault.jpg',
+        title: 'Griot',
       },
       {
         img: 'https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2017/04/18145446/fc84qd004-02-main.jpg',
-        title: 'chicken',
+        title: 'Chicken',
       },
       {
-        img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-        title: 'Coffee',
+        img: 'https://d1ralsognjng37.cloudfront.net/1152ae9e-1360-4cb6-b759-b347b5f64943',
+        title: 'Turkey',
       },
 
 

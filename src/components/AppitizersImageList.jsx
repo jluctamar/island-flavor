@@ -29,26 +29,31 @@ function AppitizersImageList() {
 const Box = styled.div`
     width: 100%;
     height: 100%;
+    
+    img {
+      border-radius: 16px;
+      box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px, rgb(0 0 0 / 30%) 0px 3px 7px -3px;
+    }
 `
 
 
 
 const itemData = [
     {
-      img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-      title: 'Tomato basil',
+      img: 'https://www.recetin.com/wp-content/uploads/2013/09/pollo_ajillo.jpg',
+      title: 'Chicken Wings',
       },
       {
-        img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-        title: 'Burger',
+        img: 'https://gardengrubblog.com/wp-content/uploads/2021/08/Untitled-design-2021-08-08T212255.120.png',
+        title: 'Jamacain Patty',
       },
       {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
+    img: 'https://howtofeedaloon.com/wp-content/uploads/2015/04/calamari-IG.jpg',
+    title: 'Calamari',
       },
       {
         img: 'https://www.savorythoughts.com/wp-content/uploads/2019/01/Haitian-Patties-Haitian-Pate-Recipe-BHM-Virtual-Potluck-stacked-patties-on-white-plate.jpg',
-        title: 'Mushrooms',
+        title: 'Hatian Patty',
       },
 
 
