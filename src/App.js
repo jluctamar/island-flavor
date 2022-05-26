@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {HashRouter as Router, Route, Routes} from "react-router-dom";
 import styled from 'styled-components';
 import Navigation from "./components/Navigation";
 import { APP_NAME } from "./shared/constants";
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <Wrapper className='wrapper-app' >
-      <BrowserRouter>
+      <Router>
         <NavWrapper className='nav-wrapper'>
             <h1>{APP_NAME}</h1>
            <Navigation parentCallback = {handleHamburgerCallback}/> 
@@ -37,7 +37,7 @@ function App() {
             <Route path='/menu' element={<Menu parentCallback = {handleCallback}  />} />
             <Route path='/about' element={<About parentCallback = {handleCallback} />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </Wrapper>
   );
   
@@ -104,7 +104,7 @@ h1 {
   margin: 0;
   align-self: center;
   color: var(--text-color-primary);
-  text-shadow: black 1px 2px 2px;
+  text-shadow: green 1px 2px 2px;
 
 // @media only screen and (max-width: 767px) and (orientation: landscape) {
 //   height: 15vh;
