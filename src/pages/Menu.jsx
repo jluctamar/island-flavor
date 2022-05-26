@@ -162,7 +162,7 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
 
-  background-image: url(${process.env.PUBLIC_URL + '../../assets/wood-background.png'});
+  background-image: url(${process.env.PUBLIC_URL + '/assets/wood-background.png'});
   background-repeat: no-repeat;  
   background-size: cover;
   

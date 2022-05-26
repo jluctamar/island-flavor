@@ -104,7 +104,7 @@ h1 {
   margin: 0;
   align-self: center;
   color: var(--text-color-primary);
-  text-shadow: black 1px 2px 2px;
+  text-shadow: skyblue 1px 2px 2px;
 
 // @media only screen and (max-width: 767px) and (orientation: landscape) {
 //   height: 15vh;
