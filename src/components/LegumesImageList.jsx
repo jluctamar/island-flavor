@@ -40,7 +40,7 @@ const itemData = [
         title: 'Breakfast',
       },
       {
-        img: 'http://haitiancooking.com/wp-content/uploads/2013/12/plantains.jpg',
+        img: 'https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1200/https://healthiersteps.com/wp-content/uploads/2020/02/air-fryer-plantains.jpg',
         title: 'Bannan Peze',
       },
       {
