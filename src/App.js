@@ -33,7 +33,7 @@ function App() {
         </NavWrapper>
         
         <Routes>
-            <Route path={process.env.PUBLIC_URL + '/'} element={<Home parentCallback = {handleCallback}/>} />
+            <Route path='/' element={<Home parentCallback = {handleCallback}/>} />
             <Route path='/menu' element={<Menu parentCallback = {handleCallback}  />} />
             <Route path='/about' element={<About parentCallback = {handleCallback} />} />
         </Routes>
@@ -104,7 +104,7 @@ h1 {
   margin: 0;
   align-self: center;
   color: var(--text-color-primary);
-  text-shadow: skyblue 1px 2px 2px;
+  text-shadow: black 1px 2px 2px;
 
 // @media only screen and (max-width: 767px) and (orientation: landscape) {
 //   height: 15vh;

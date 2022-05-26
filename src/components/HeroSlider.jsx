@@ -80,16 +80,16 @@ function HeroSlider() {
         <Slides className='slides'>
           
             <div className='slide current-slide'>
-              <img src='./assets/dinning1.jpg' alt=''  className='dinning'></img>
+              <img src={process.env.PUBLIC_URL + '/assets/dinning1.jpg'} alt=''  className='dinning'></img>
             </div>
             <div className='slide ' >
-              <img src='./assets/dish2.jpg' alt=''></img>
+              <img src={process.env.PUBLIC_URL + '/assets/dish2.jpg'} alt=''></img>
             </div>
             <div className='slide '>
-              <img src='./assets/dinning2-1.jpg' alt='' className='second-dinning'></img>
+              <img src={process.env.PUBLIC_URL + '/assets/dinning2-1.jpg'} alt='' className='second-dinning'></img>
             </div>
             <div className='slide '>
-              <img src='./assets/hero3.jpg' alt=''></img>
+              <img src={process.env.PUBLIC_URL + '/assets/hero3.jpg'} alt=''></img>
             </div>
 
         </Slides>
