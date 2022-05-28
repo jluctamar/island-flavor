@@ -50,9 +50,6 @@ function HeroSlider() {
     slidesArr = Array.from(slidesContainer.children) ;
     navBtns = document.querySelector('.navigation-manual') ;
     navBtnsArr = Array.from(navBtns.children);
-    // slideWidth = slidesArr[0].getBoundingClientRect().width;
-    // slidesArr.forEach((elem, i) => setSlidePosition(elem, i));
-
 
 
 
@@ -86,7 +83,7 @@ function HeroSlider() {
               <img src={process.env.PUBLIC_URL + '/assets/dish2.jpg'} alt=''></img>
             </div>
             <div className='slide '>
-              <img src={process.env.PUBLIC_URL + '/assets/dinning2-1.jpg'} alt='' className='second-dinning'></img>
+              <img src={process.env.PUBLIC_URL + '/assets/dinning4.jpg'} alt='' className='second-dinning'></img>
             </div>
             <div className='slide '>
               <img src={process.env.PUBLIC_URL + '/assets/hero3.jpg'} alt=''></img>
@@ -105,12 +102,6 @@ function HeroSlider() {
           <button className="manual-btn"></button>
         </NavigationManual>
 
-        {/* <NavigationAuto className="navigation-auto">
-          <div className="auto-btn1"></div>
-          <div className="auto-btn2"></div>
-          <div className="auto-btn3"></div>
-          <div className="auto-btn4"></div>
-        </NavigationAuto> */}
       </Slider>
 
     </Wrapper>
@@ -170,21 +161,64 @@ const Slides =  styled.div`
 
 
     &.dinning {
-      filter: blur(2px);
+      filter: blur(2px) brightness(1.2) contrast(1.1);
     }
     &.second-dinning {
-      filter: blur(1px) brightness(1.2) contrast(1.1);
+      object-fit: cover;
+      filter: blur(2px) brightness(1.2) contrast(1.1);
     }
   }
 
   @media only screen and (max-width: 767px) and (orientation: portrait) {
     img {
       object-fit: cover;
+      &.second-dinning {
+        object-fit: fill;
+        filter: blur(0px) brightness(1.2) contrast(1.1);
+      }
     }
   }
 
   @media only screen and (max-width: 767px) and (orientation: landscape) {
+    img {
+      object-fit: cover;
+      &.second-dinning {
+        filter: blur(0px) brightness(1.2) contrast(1.1);
+      }
+    }
+  } 
 
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    img {
+      &.second-dinning {
+        filter: blur(0px) brightness(1.2) contrast(1.1);
+      }
+    }
+  } 
+
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    img {
+      &.second-dinning {
+        filter: blur(0px) brightness(1.2) contrast(1.1);
+      }
+    }
+  } 
+
+  
+  @media only screen and (min-width: 1025px) and (max-width: 1200px) and (orientation: portrait) {
+    img {
+      &.second-dinning {
+        filter: blur(0px) brightness(1.2) contrast(1.1);
+      }
+    }
+  } 
+  
+  @media only screen and (min-width: 1025px) and (max-width: 1200px) and (orientation: landscape) {
+    img {
+      &.second-dinning {
+        filter: blur(0px) brightness(1.2) contrast(1.1);
+      }
+    }
   } 
 `
 
@@ -247,29 +281,5 @@ bottom: 24px;
 }
 `
 
-// const NavigationAuto = styled.div`
-//   position: absolute;
-//   display: flex;
-//   width: 100%;
-//   justify-content: center;
-//   margin-top: -100px;
-
-//   div {
-//     display: none;   // Hiding the buttons for simplicity
-//     border: 4px solid red;
-//     padding: 5px;
-//     border-radius: 10px;
-//     cursor: pointer;
-//     transition: 2s;
-//   }
-
-//    div:not(:last-child) {
-//     margin-right: 40px;
-//   }
-//   .manual-btn:hover {
-//     background : red;
-//   }
-
-// `
  
 export default HeroSlider

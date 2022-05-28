@@ -194,7 +194,7 @@ const Wrapper = styled.div`
       cursor: pointer;
       direction: ltr;
       display: block;
-      font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-family: inherit;
       font-size: 17px;
       font-weight: 400;
       letter-spacing: -.022em;
