@@ -107,7 +107,6 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // height: 75vh;
     width: 100%;
     background: white;
     padding: 8em;
@@ -128,7 +127,6 @@ const Wrapper = styled.div`
   }
   .customer-testimonials {
     display: flex;
-    // height: 50vh;
     width: 100%;
     flex-direction: column;
     justify-content: center;
@@ -146,9 +144,9 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // height: 50vh;
     width: 100%;
-    background: white;
+    background: hsla(210, 31%, 61%, 1);
+    background: linear-gradient(180deg, hsl(30deg 130% 92%) -4%, hsl(228deg 34% 52%) 95%);
     padding-left: 8em;
     padding-right: 8em;
     padding-top: 4em;
@@ -192,9 +190,9 @@ const Wrapper = styled.div`
   }
   .contact-form {
     display: flex;
-    // height: 95vh;
     width: 100%;
     background: #0a1524;
+    background: linear-gradient(180deg, hsl(228deg 33% 53%) -3%, hsl(228deg 15% 10%) 70%);
     color: white;
     flex-direction: column;
     align-items: center;
@@ -278,7 +276,6 @@ const Wrapper = styled.div`
 
     .info {
       padding: 1em;
-      // height: 85vh;
       .header {
         font-size: 2rem;
       }
@@ -302,7 +299,6 @@ const Wrapper = styled.div`
     }
 
     .contact-form {
-      // height: 90vh;
       padding-top: 2em;
       .header {
         font-size: 2rem;
