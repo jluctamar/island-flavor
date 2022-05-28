@@ -24,7 +24,8 @@ const Wrapper = styledComponents.div`
   height: 150px;
   width: 350px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background: rgba(123, 155, 186, .8);;
+  background: hsla(210, 31%, 61%, 1);
+  background: linear-gradient(178deg, hsla(223, 23%, 70%, .9) 33%, hsla(210, 53%, 69%, 0.9) 94%);
   align-items: center;
   justify-content: space-between;
   border-radius: 16px;
