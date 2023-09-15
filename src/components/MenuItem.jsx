@@ -2,8 +2,12 @@ import React from 'react'
 import styledComponents from 'styled-components'
 
 function MenuItem(properties) {
+
+  const handleClick = () => {
+    properties.parentCallback(true,properties);
+  }
   return (
-    <Wrapper className="wrapper-menu-item">
+    <Wrapper className="wrapper-menu-item" onClick={handleClick}>
         <div className="names">
             <div className="text">{properties.mainText}</div>
             <div className="text sub">{properties.subText}</div>

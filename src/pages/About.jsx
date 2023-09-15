@@ -67,22 +67,8 @@ function About( properties) {
         <div className="more-info">DINE IN-TAKE OUT, CATERING, FREE DELIVERY, AND MORE</div>
       </div>
       <div className="contact-form">
-        <div className="header">Drop Us a Message</div>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Name*</label>
-            <input type="text" id="name" required />
-          </div>
-          <div>
-            <label htmlFor="email">Email Address*</label>
-            <input type="email" id="email" required />
-          </div>
-          <div>
-            <label htmlFor="message">Message*</label>
-            <textarea id="message" required />
-          </div>
-          <button type="submit">SUBMIT</button>
-        </form> 
+        <div className="header">Drop Us A Message</div>
+        
         <div className="copyright"> {COPYRIGHT}</div>       
       </div>
       {/* <Footer className='footer' /> */}

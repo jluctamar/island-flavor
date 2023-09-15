@@ -4,8 +4,24 @@ import Footer from '../components/footer';
 import MenuItem from '../components/MenuItem';
 import { PLACE_ORDER_LINK } from '../shared/constants';
 import { fullMenu } from '../shared/menuData';
+import MenuItemDetails from '../components/MenuItemDetails';
+import { useState } from 'react';
 
 function Menu(properties) {
+  const [toggled, toggle] = useState(false);
+  const [menuItem, setMenuItem] = useState();
+
+  function handleItemSelectCallback(displayMenuItem, item) {
+    setMenuItem(item);
+    toggle(displayMenuItem);
+  };
+
+  function handleItemDeselect() {
+    toggle(false);
+  };
+
+    
+  
   const simulateScrollHeight = -1;
   let meatLegumArr = [];
   let saladsArr = [];
@@ -68,77 +84,77 @@ function Menu(properties) {
         <div className='meal-types'>
           <div className="header">Appetizers</div>
           <div className='items'>  
-            {appArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+            {appArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price} parentCallback = {handleItemSelectCallback} />)}
           </div>
         </div>
         
         <div className='meal-types'>
           <div className="header">Salads</div>
           <div className="items">
-            {saladsArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+            {saladsArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price} parentCallback = {handleItemSelectCallback}/>)}
           </div>
         </div>
         
         <div className='meal-types'>
           <div className="header">Meats And Legumes</div>
           <div className="items">
-            {meatLegumArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+            {meatLegumArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price} parentCallback = {handleItemSelectCallback}/>)}
           </div>
         </div>
 
         <div className='meal-types'>
           <div className="header">Burgers</div>
           <div className="items">
-            {burgersArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+            {burgersArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price} parentCallback = {handleItemSelectCallback}/>)}
           </div>
         </div>
 
         <div className='meal-types'>
           <div className="header">Tacos</div>
           <div className="items">
-            {tacosArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+            {tacosArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price} parentCallback = {handleItemSelectCallback}/>)}
           </div>
         </div>
 
         <div className='meal-types'>
           <div className="header">Seafood</div>
           <div className="items">
-            {seafoodArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+            {seafoodArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price} parentCallback = {handleItemSelectCallback}/>)}
           </div>
         </div>
 
         <div className='meal-types'>
           <div className="header">Soup</div>
           <div className="items">
-            {soupArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+            {soupArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price} parentCallback = {handleItemSelectCallback}/>)}
           </div>
         </div>
 
         <div className='meal-types'>
           <div className="header">Side Dishes</div>
           <div className="items">
-            {sideDishesArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+            {sideDishesArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price} parentCallback = {handleItemSelectCallback}/>)}
           </div>
         </div>
 
         <div className='meal-types'>
           <div className="header">Beverages</div>
           <div className="items">
-            {beveragesArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+            {beveragesArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price} parentCallback = {handleItemSelectCallback}/>)}
           </div>
         </div>
 
         <div className='meal-types'>
           <div className="header">Desserts</div>
           <div className="items">
-            {dessertsArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+            {dessertsArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price} parentCallback = {handleItemSelectCallback}/>)}
           </div>
         </div>
 
         <div className='meal-types'>
           <div className="header">Extras</div>
           <div className="items">
-            {extrasArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price}/>)}
+            {extrasArr.map((elem, index) => <MenuItem key={index} mainText={elem[1].mainText} subText={elem[1].subText} price={elem[1].price} parentCallback = {handleItemSelectCallback}/>)}
           </div>
         </div>
 
@@ -149,6 +165,10 @@ function Menu(properties) {
             </form>
         </div>
       </div>
+      {toggled ? 
+        <div className='details-overlay'>
+          <MenuItemDetails selectedMenuItem={menuItem} parentCallback={handleItemDeselect}/>
+        </div> : null}
       <Footer />
     </Wrapper>
   )
@@ -239,6 +259,20 @@ const Wrapper = styled.div`
     }
   }
 
+  .details-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(37, 45, 80, .5);
+  }
 
   @media only screen and (max-width: 767px) { 
     
