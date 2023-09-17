@@ -48,7 +48,7 @@ const itemData = [
         title: 'Griot',
       },
       {
-        img: 'https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2017/04/18145446/fc84qd004-02-main.jpg',
+        img: 'https://kennethtemple.com/wp-content/uploads/2022/11/Haitian-Stewed-Chicken-6.jpg',
         title: 'Chicken',
       },
       {

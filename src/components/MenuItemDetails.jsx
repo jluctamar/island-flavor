@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styledComponents from 'styled-components'
 import { PLACE_ORDER_LINK } from '../shared/constants';
 
 
 function MenuItemDetails(properties) {
+    const [isCreole, setLingo] = useState(true);
+
 
     const handleClick = () => {
         properties.parentCallback(false);
     }
-    const handleOrderClick = () => {
-        properties.parentCallback(false);
-    }
+
     
+    function updateLingo( flag ) {
+        setLingo(flag);
+    }
     return(
     <Wrapper className='wrapper-menuItem-details' >
 
@@ -21,6 +24,10 @@ function MenuItemDetails(properties) {
                 <div className='img-container'>
                     <img src='https://images.unsplash.com/photo-1551963831-b3b1ca40c98e' alt="" className='menu-item-image' />
                 </div>
+                {/* <div className='lingo-set'>
+                    <div className='select'>Eng</div>
+                    <div className='select'>Creole</div>
+                </div> */}
             </div>
 
             <div className='details-content'>
@@ -71,6 +78,7 @@ const DetailsCard = styledComponents.div `
         flex-direction: column-reverse;
         width: 100%;
         align-items: center;
+        position: relative;
     }
     .img-container {
         width: 150px;
@@ -82,13 +90,24 @@ const DetailsCard = styledComponents.div `
         box-shadow: 11px 14px 19px rgba(0, 0, 0, 0.5);
     }
 
-    .menu-item-image{
+    .lingo-set {
+        display: flex;
+        position: absolute;
+        right: 24px;
+        top: 16px;
+
+        .select {
+            margin-right: 16px;
+        }
+    }
+
+    .menu-item-image {
         width: 150px;
         height: 150px;
         border-radius: 50%;
     }
 
-    .title{ 
+    .title { 
         text-decoration: underline;
     }
 

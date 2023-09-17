@@ -58,7 +58,7 @@ const itemData = [
       },
 
       {
-        img: 'https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1200/https://healthiersteps.com/wp-content/uploads/2020/02/air-fryer-plantains.jpg',
+        img: 'https://teatimemagazine.com/wp-content/uploads/2022/03/tea_image008_RGB_700x540_2021599.jpg',
         title: 'Bannan Peze',
       },
 
