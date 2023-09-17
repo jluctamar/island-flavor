@@ -228,6 +228,11 @@ const Wrapper = styled.div`
       -webkit-user-select: none;
       touch-action: manipulation;
       white-space: nowrap;
+      transition: .2s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
 
 

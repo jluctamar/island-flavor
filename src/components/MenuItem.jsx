@@ -34,9 +34,11 @@ const Wrapper = styledComponents.div`
   justify-content: space-between;
   border-radius: 16px;
   padding: 1em;
+  transition: .2s;
+
 
   :hover {
-      transform: scale(1.01);
+      transform: scale(1.05);
   }
 
 

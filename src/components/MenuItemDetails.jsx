@@ -19,13 +19,13 @@ function MenuItemDetails(properties) {
             <div className='details-header'>
                 <div className='title'>{properties.selectedMenuItem.mainText}</div>
                 <div className='img-container'>
-                    {/* <img src="{{ dish.imgSrc }}" alt="" className="dish-image" /> */}
+                    <img src='https://images.unsplash.com/photo-1551963831-b3b1ca40c98e' alt="" className='menu-item-image' />
                 </div>
             </div>
 
             <div className='details-content'>
                 <div className='descript-container'>
-                    <p className='descript'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <div className='descript'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
                 </div>
 
                 <div className='action-container'>
@@ -45,27 +45,27 @@ function MenuItemDetails(properties) {
 
 const Wrapper = styledComponents.div`
 
-    .wrapper-menuItem-details {
-        display: flex;
-        align-items: center;  
-        justify-content: center;
-        width: 100%;
-        height: 100%;
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+    width: 100%;
+    height: 100%;
         
-    }
+    
 `;
 
 const DetailsCard = styledComponents.div `
-    .details-card {
-        width: 500px;
-        height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        border-width: thick;
-        border: outset;
-        background: linear-gradient(178deg,hsla(223,23%,70%,.9) 33%,hsla(210,53%,69%,0.9) 94%);
-    }
+    
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-width: thick;
+    border: outset;
+    border-radius: 16px;
+    background: linear-gradient(178deg,hsla(223,23%,70%,.9) 33%,hsla(210,53%,69%,0.9) 94%);
+
     .details-header {
         display: flex;
         flex-direction: column-reverse;
@@ -77,8 +77,19 @@ const DetailsCard = styledComponents.div `
         height: 150px;
         border: 2px solid #fff;
         border-radius: 100px;
+        margin-top: 16px;
         margin-bottom: 16px;
         box-shadow: 11px 14px 19px rgba(0, 0, 0, 0.5);
+    }
+
+    .menu-item-image{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .title{ 
+        text-decoration: underline;
     }
 
     .details-content {
@@ -88,12 +99,20 @@ const DetailsCard = styledComponents.div `
     }
 
     .descript-container {
+        display: flex;
         font-size: .8rem;
+        height: 70%;
+        padding-top: 8px;
         padding-left: 16px;
         padding-right: 16px;
     }
     
     .descript {
+        overflow: auto;
+        height: 90%;
+        font-size: 1.2rem;
+        text-align: center;
+        text-shadow: 0px 2px #8f8f8f;
         padding-bottom: 8px;
         padding-right: 8px;
         padding-left: 8px;
@@ -106,47 +125,67 @@ const DetailsCard = styledComponents.div `
         justify-content: space-between;
         align-items: baseline;
         width: 100%;
-        margin-top: 32px;
     }
     .price {
+        text-shadow: 0px 2px #8f8f8f;
         margin-left: 32px;
+        font-size: 1.2rem;
         font-weight: bold;
         line-height: 36px;
     }
     .button-container {
-        
+        display: flex;
     }
-    .button-container .button {
-        background-color: red;
-        color: grey;
-        margin-right: 8px;
-        font-size: 1rem;
+    .button-container .btn {
+        background-image: linear-gradient(#42A1EC, #0070C9);
+        border: 1px solid #0077CC;
+        border-radius: 16px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        direction: ltr;
+        display: block;
+        font-family: inherit;
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: -.022em;
+        line-height: 1.47059;
+        min-width: 30px;
+        overflow: visible;
+        padding: 4px 15px;
+        text-align: center;
+        vertical-align: baseline;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        margin-right: 16px;
         transition: .2s;
         &:hover {
-            background-color: white;
+            transform: scale(1.15);            
         }
     }
 
 
 
     @media only screen and (max-width: 767px) and (orientation: portrait) {
-        .details-card {
-          width: 95%;
-          height: 460px;
-          justify-content: space-evenly;
-        }
+        
+        width: 95%;
+        height: 460px;
+        justify-content: space-evenly;
+    
 
         .img-container {
             width: 130px;
             height: 130px;
         }
   
-        .dish-image {
+        .menu-item-image {
             width: 130px;
             height: 130px;
         }
        
-        .dish-title {
+        .title {
             font-size: 1.2rem;
         }
 
@@ -182,12 +221,12 @@ const DetailsCard = styledComponents.div `
     
     @media only screen and (max-width: 767px) and (orientation: landscape) {
         
-        .details-card  {
-          width: 90%;
-          transform: translateY(28px);
-          height: 260px;
-          justify-content: space-evenly;
-        }
+
+        width: 90%;
+        transform: translateY(28px);
+        height: 280px;
+        justify-content: space-evenly;
+    
 
         .img-container {
             width: 90px;
@@ -196,17 +235,17 @@ const DetailsCard = styledComponents.div `
             box-shadow: 7px 10px 19px rgb(0 0 0 / 50%);
         }
 
-        .dish-image {
+        .menu-item-image {
             width: 90px;
             height: 90px;
         }
 
-        .dish-title {
+        .title {
             font-size: 1.5rem;
             margin-bottom: 8px;
         }
 
-        dish-content {
+        .details-content {
         }
         
         .descript-container {
