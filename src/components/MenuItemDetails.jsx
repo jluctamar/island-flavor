@@ -35,7 +35,12 @@ function MenuItemDetails(properties) {
                 </div>
 
                 <div className='action-container'>
-                    <div className='price'>${properties.selectedMenuItem.menuItem.price}</div>        
+                    <div className='price'>
+                        {new Intl.NumberFormat("en-US", {
+                            style: "currency",
+                            currency: "USD"
+                        }).format(properties.selectedMenuItem.menuItem.price)}                        
+                    </div>        
                     <div className='button-container'>
                         <form action={PLACE_ORDER_LINK}>
                             <button type="submit" className='btn'>Place Order</button>
@@ -196,13 +201,18 @@ const DetailsCard = styledComponents.div `
     @media only screen and (max-width: 767px) and (orientation: portrait) {
         
         width: 95%;
-        height: 460px;
+        height: 380px;
         justify-content: space-evenly;
     
 
         .img-container {
             width: 130px;
             height: 130px;
+        }
+
+        .lingo-set {
+            right: 16px;
+            top: -24px;
         }
   
         .menu-item-image {
@@ -226,6 +236,7 @@ const DetailsCard = styledComponents.div `
         }
     
         .action-container {
+            padding: 8px;
         }
 
         .price {
@@ -260,6 +271,10 @@ const DetailsCard = styledComponents.div `
             box-shadow: 7px 10px 19px rgb(0 0 0 / 50%);
         }
 
+        .lingo-set {
+            top: 0px;
+        }
+
         .menu-item-image {
             width: 90px;
             height: 90px;
@@ -290,6 +305,23 @@ const DetailsCard = styledComponents.div `
         .price {
         margin-bottom: 0px;
         }
+    }
+
+
+    @media only screen and (min-width: 768px ) and (max-width: 1023px) and (orientation: portrait) {
+
+
+    }
+
+    
+    @media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+        width: 470px;
+        height: 380px; 
+
+        .lingo-set {
+            top: -16px;
+        }
+
     }
 `
 export default MenuItemDetails
