@@ -9,14 +9,14 @@ function MenuItem(properties) {
   return (
     <Wrapper className="wrapper-menu-item" onClick={handleClick}>
         <div className="names">
-            <div className="text">{properties.mainText}</div>
-            <div className="text sub">{properties.subText}</div>
+            <div className="text">{properties.menuItem.mainText}</div>
+            <div className="text sub">{properties.menuItem.subText}</div>
         </div>
         <div className="price">
         {new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD"
-        }).format(properties.price)}    
+        }).format(properties.menuItem.price)}    
         </div>
     </Wrapper>
   )

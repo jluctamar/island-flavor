@@ -12,31 +12,30 @@ function MenuItemDetails(properties) {
     }
 
     
-    function updateLingo( flag ) {
-        setLingo(flag);
+    function handleLingoClick(  ) {
+        setLingo(!isCreole);
     }
     return(
     <Wrapper className='wrapper-menuItem-details' >
 
         <DetailsCard className='details-card'>
             <div className='details-header'>
-                <div className='title'>{properties.selectedMenuItem.mainText}</div>
+                <div className='title'>{isCreole ? properties.selectedMenuItem.menuItem.mainText: properties.selectedMenuItem.menuItem.subText}</div>
                 <div className='img-container'>
                     <img src='https://images.unsplash.com/photo-1551963831-b3b1ca40c98e' alt="" className='menu-item-image' />
                 </div>
-                {/* <div className='lingo-set'>
-                    <div className='select'>Eng</div>
-                    <div className='select'>Creole</div>
-                </div> */}
+                <div className='lingo-set'>
+                    <div className={'select'} onClick={handleLingoClick}>{isCreole? 'Switch to English': 'Switch to Creole'}</div>
+                </div>
             </div>
 
             <div className='details-content'>
                 <div className='descript-container'>
-                    <div className='descript'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+                    <div className='descript'>{isCreole ? properties.selectedMenuItem.menuItem.creoleDescrip : properties.selectedMenuItem.menuItem.engDescrip} </div>
                 </div>
 
                 <div className='action-container'>
-                    <div className='price'>${properties.selectedMenuItem.price}</div>        
+                    <div className='price'>${properties.selectedMenuItem.menuItem.price}</div>        
                     <div className='button-container'>
                         <form action={PLACE_ORDER_LINK}>
                             <button type="submit" className='btn'>Place Order</button>
@@ -95,10 +94,14 @@ const DetailsCard = styledComponents.div `
         position: absolute;
         right: 24px;
         top: 16px;
+        cursor: pointer;
 
         .select {
-            margin-right: 16px;
+            text-decoration: underline;
+            color: var(--text-color-secondary);
+
         }
+
     }
 
     .menu-item-image {
@@ -121,14 +124,17 @@ const DetailsCard = styledComponents.div `
         display: flex;
         font-size: .8rem;
         height: 70%;
+        width: 100%;
         padding-top: 8px;
+        padding-bottom: 8px;
         padding-left: 16px;
         padding-right: 16px;
     }
     
     .descript {
         overflow: auto;
-        height: 90%;
+        height: 100%;
+        width: 100%;
         font-size: 1.2rem;
         text-align: center;
         text-shadow: 0px 2px #8f8f8f;
