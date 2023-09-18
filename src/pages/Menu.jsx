@@ -275,7 +275,7 @@ const Wrapper = styled.div`
     right: 0;
     bottom: 0;
     z-index: 2;
-    background-color: rgba(37, 45, 80, .5);
+    background-color: rgba(37, 45, 80, .9);
   }
 
   @media only screen and (max-width: 767px) { 
